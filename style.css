@@ -1,0 +1,295 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fafafa;
+    font-family: "Barlow", sans-serif;
+}
+
+body:has(.requires-no-scroll) {
+    overflow: hidden;
+}
+
+.topRow{
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+}
+
+.container {
+    max-width: 90%;
+    margin: 1.25rem auto;
+}
+
+.modal {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+    background-color: #202124;
+    color: white;
+    justify-content: space-between;
+    display: none;
+}
+
+.modalContent {
+    height: 85vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 8rem;
+}
+
+.modalImage {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.modalBody {
+    margin: 1.5rem;
+    line-height: 1.5rem;
+}
+
+.modalFooter {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 2rem;
+    align-items: center;
+}
+
+.modalBtn {
+    border-radius: 20px;
+    padding: 12px 26px;
+    border: none;
+    color: white;
+}
+
+.circle {
+    width: 4px;
+    height: 4px;
+    background: #5d6067;
+    margin-top: 0.75rem;
+    border-radius: 50%;
+}
+
+
+
+.gsc-control-cse{
+    border: none !important;
+    background-color: #fafafa !important;
+    padding: 0 !important;
+}
+
+.gcsc-branding,
+.gsc-above-wrapper-area {
+    display: none !important;
+}
+
+.gsc-cursor-container-previous{
+    text-align: left !important;
+}
+.gsc-cursor-container-next{
+    text-align: right !important;
+}
+
+.gsc-webResult .gsc-result, .gsc-results .gsc-cursor-box {
+    border: none !important;
+}
+
+.gsc-results .gsc-cursor-box{
+    background-color: #ffffff !important;
+    border-radius: 6px !important;
+    padding: 0.4rem 0 !important;
+    margin: 1rem 0 !important;
+    text-align: center;
+}
+
+.gsc-results .gsc-cursor {
+    color: #5D6067 !important;
+    fill: #2B2F39 !important;
+}
+
+.gcsc-more-maybe-branding-box{
+    border: none !important;
+    background-color: #ffffff !important;
+    padding: 0.65rem 1rem !important;
+    border-radius: 33px !important;
+}
+
+
+
+
+#search {
+    align-items: center;
+    background: #ffffff;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.5s;
+    margin: 1rem auto 0.5rem auto;
+}
+
+#search button,
+#search input {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    color: #2b2f39;
+    font: inherit;
+    outline: 0;
+    padding: 1rem;
+}
+#search input {
+    flex: 1;
+}
+#search input::placeholder {
+    color: rgba(43, 47, 57, 0.6);
+    font-weight: 500;
+}
+i {
+    color: #2a8cff;
+}
+#search button {
+    cursor: pointer;
+}
+#search .spinner {
+    animation: spinner 1s infinite linear;
+    display: none;
+}
+#search.loading .fa-search {
+    display: none;
+}
+#search.loading .spinner {
+    display: block;
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.msg{
+    text-align: center;
+    margin: 1rem;
+    font-style: italic;
+    color: #9499A6;
+}
+
+.rowWrapper {
+    display: flex;
+    /* flex-wrap: wrap; */
+    gap: 1rem;
+    padding: 1em;
+    background-color: #ffffff;
+    border-radius: 6px;
+}
+
+.rowWrapper:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.thumbnail {
+    width: 125px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.wrapper {
+    width: inherit;
+    position: relative;
+}
+.duration {
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 45px;
+    text-align: center;
+    font-size: 0.75rem;
+    padding: 2px;
+
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    right: 0;
+    margin: 0 4px 8px 0;
+
+    border-radius: 2px;
+}
+
+.textWrapper {
+    display: flex;
+    gap: 5px;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.textBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ytIcon{
+    background-image: url('https://www.freepnglogos.com/uploads/youtube-logo-hd-8.png');
+    background-size: cover;
+    min-width: 24px;
+    height: 24px;
+    padding-right: 1.6rem;
+}
+
+.videoTitle {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.9rem;
+    line-height: 1.25rem;
+}
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 320px) {
+    .rowWrapper {
+        flex-wrap: wrap;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .thumbnail {
+        width: 125px;
+        height: 90px;
+    }
+}
+@media only screen and (min-width: 600px) {
+    .container {
+        max-width: 90%;
+    }
+    .textWrapper{
+        width: 70%;
+    }
+}
+@media only screen and (min-width: 992px) {
+    .container {
+        max-width: 60%;
+    }
+    .rowWrapper {
+    gap: 1.25rem;
+}
+}
